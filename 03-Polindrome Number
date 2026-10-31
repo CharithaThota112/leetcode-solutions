@@ -1,0 +1,26 @@
+# LeetCode: Palindrome Number
+# Difficulty: Easy
+
+# What I learned:
+# 1. Strings
+# 2. If conditions
+# 3. Type conversion
+# 4. String reversal
+# 5. Return statements
+
+# Approach:
+# Convert the number into a string.
+# Reverse the string.
+# Compare both strings.
+# If they are equal, return True.
+# Otherwise, return False.
+
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        if x < 0:
+            return False
+
+        text = str(x)
+        reverse = text[::-1]
+
+        return text == reverse
