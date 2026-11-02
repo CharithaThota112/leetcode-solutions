@@ -1,0 +1,49 @@
+# Day 5 - Best Time to Buy and Sell Stock
+# LeetCode Problem
+
+# Problem:
+# Find the maximum profit by buying and selling
+# a stock only once.
+
+# Example:
+# Input: [7, 1, 5, 3, 6, 4]
+# Output: 5
+#
+# Explanation:
+# Buy at 1 and sell at 6.
+# Maximum Profit = 6 - 1 = 5
+
+
+class Solution:
+    def maxProfit(self, prices):
+        min_price = prices[0]
+        max_profit = 0
+
+        for price in prices:
+            if price < min_price:
+                min_price = price
+
+            profit = price - min_price
+
+            if profit > max_profit:
+                max_profit = profit
+
+        return max_profit
+
+
+# Test the code
+prices = [7, 1, 5, 3, 6, 4]
+
+obj = Solution()
+print("Maximum Profit:", obj.maxProfit(prices))
+
+
+# What I Learned:
+# 1. Python lists and loops
+# 2. If conditions
+# 3. Finding minimum values
+# 4. Calculating maximum profit
+# 5. Problem-solving skills
+
+# Time Complexity: O(n)
+# Space Complexity: O(1)
