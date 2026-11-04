@@ -1,0 +1,58 @@
+# Day 7 - Valid Anagram
+# LeetCode Problem 242
+
+# Problem:
+# Given two strings s and t, check whether
+# t is an anagram of s.
+# Both strings must contain the same characters
+# with the same frequency.
+
+# Example:
+# Input: s = "anagram", t = "nagaram"
+# Output: True
+#
+# Explanation:
+# Both strings contain the same characters
+# with the same frequency.
+#
+# Input: s = "rat", t = "car"
+# Output: False
+
+
+class Solution:
+    def isAnagram(self, s, t):
+
+        if len(s) != len(t):
+            return False
+
+        count1 = {}
+        count2 = {}
+
+        for char in s:
+            count1[char] = count1.get(char, 0) + 1
+
+        for char in t:
+            count2[char] = count2.get(char, 0) + 1
+
+        return count1 == count2
+
+
+# Test the code
+obj = Solution()
+
+print("Result:", obj.isAnagram("anagram", "nagaram"))
+print("Result:", obj.isAnagram("rat", "car"))
+print("Result:", obj.isAnagram("listen", "silent"))
+
+
+# What I Learned:
+# 1. Python dictionaries
+# 2. Key-value pairs
+# 3. Counting character frequency
+# 4. Using the get() method
+# 5. Comparing two dictionaries
+# 6. Using loops and if conditions
+# 7. Problem-solving skills
+
+# Time Complexity: O(n)
+# Space Complexity: O(n)
