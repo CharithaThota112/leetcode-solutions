@@ -1,0 +1,54 @@
+# Day 8 - First Unique Character in a String
+# LeetCode Problem 387
+
+# Problem:
+# Given a string, find the first character
+# that appears only once and return its index.
+# If no unique character exists, return -1.
+
+# Example:
+# Input: "leetcode"
+# Output: 0
+#
+# Explanation:
+# The character 'l' appears only once.
+# Its index is 0.
+
+
+class Solution:
+    def firstUniqChar(self, s):
+        char_count = {}
+
+        # Count each character
+        for char in s:
+            char_count[char] = char_count.get(char, 0) + 1
+
+        # Find the first unique character
+        for index, char in enumerate(s):
+            if char_count[char] == 1:
+                return index
+
+        return -1
+
+
+# Test the code
+obj = Solution()
+
+print("Unique Character Index:", obj.firstUniqChar("leetcode"))
+print("Unique Character Index:", obj.firstUniqChar("loveleetcode"))
+print("Unique Character Index:", obj.firstUniqChar("aabb"))
+print("Unique Character Index:", obj.firstUniqChar("abcabcde"))
+
+
+# What I Learned:
+# 1. Python dictionaries
+# 2. Character frequency counting
+# 3. For loops
+# 4. Dictionary get() method
+# 5. enumerate() function
+# 6. Finding unique characters
+# 7. Returning character indexes
+# 8. Problem-solving skills
+
+# Time Complexity: O(n)
+# Space Complexity: O(1)
