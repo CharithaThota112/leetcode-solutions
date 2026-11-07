@@ -1,0 +1,31 @@
+# Day 9 - Single Number
+# LeetCode Problem 136
+
+# Problem:
+# Every number appears twice except one.
+# Find the number that appears only once.
+
+class Solution:
+    def singleNumber(self, nums: list[int]) -> int:
+
+        result = 0
+
+        for num in nums:
+            result = result ^ num
+
+        return result
+
+
+# What I Learned Today:
+#
+# 1. How to use the XOR operator (^).
+# 2. How to iterate through a list using a for loop.
+# 3. How XOR helps identify a unique number.
+# 4. How to solve problems efficiently.
+#
+# Key Concepts:
+# - Lists
+# - For Loop
+# - Bitwise XOR
+#
+# Day 9 Completed!
