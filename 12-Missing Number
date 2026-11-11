@@ -1,0 +1,29 @@
+# Day 12 - Missing Number
+# LeetCode Problem 268
+
+# Problem:
+# Given an array containing n distinct numbers
+# in the range [0, n].
+# Find the number that is missing.
+
+
+class Solution:
+    def missingNumber(self, nums: list[int]) -> int:
+
+        result = len(nums)
+
+        for i in range(len(nums)):
+            result = result ^ i ^ nums[i]
+
+        return result
+
+
+# What I Learned Today:
+# 1. Python Lists
+# 2. For Loops
+# 3. XOR Operator
+# 4. Array Traversal
+# 5. Problem Solving
+
+# Time Complexity: O(n)
+# Space Complexity: O(1)
