@@ -1,0 +1,44 @@
+# Day 13 - Majority Element
+# LeetCode Problem 169
+
+# Problem:
+# Given an array of integers, find the element
+# that appears more than n // 2 times.
+
+# Example:
+# Input: [3,2,3]
+# Output: 3
+
+# Explanation:
+# The number 3 appears 2 times.
+# Array length = 3
+# 2 > 3 // 2
+# Therefore, the majority element is 3.
+
+
+class Solution:
+    def majorityElement(self, nums):
+        count = {}
+
+        for num in nums:
+            count[num] = count.get(num, 0) + 1
+
+            if count[num] > len(nums) // 2:
+                return num
+
+
+# Test Cases
+solution = Solution()
+
+print(solution.majorityElement([3, 2, 3]))
+print(solution.majorityElement([2, 2, 1, 1, 1, 2, 2]))
+
+
+# What I Learned Today:
+# 1. Dictionary in Python
+# 2. Counting element frequency
+# 3. Using the get() method
+# 4. Using integer division (//)
+
+# Time Complexity: O(n)
+# Space Complexity: O(n)
